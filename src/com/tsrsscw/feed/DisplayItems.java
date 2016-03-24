@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -82,6 +83,15 @@ public class DisplayItems extends Activity {
 				parent.getItemAtPosition(position);
 				String tempDesc = adapter.getItem(position).getDescription();
 				Toast.makeText(DisplayItems.this, "Clicked " + position + "\n" + tempDesc, Toast.LENGTH_LONG).show();
+				
+				Intent intent = new Intent(getApplicationContext(), Detail.class);
+				intent.putExtra("title", adapter.getItem(position).getTitle());
+				intent.putExtra("desc", adapter.getItem(position).getDescription());
+				intent.putExtra("sd", adapter.getItem(position).getStartDate());
+				intent.putExtra("ed", adapter.getItem(position).getEndDate());
+				intent.putExtra("link", adapter.getItem(position).getLink());
+				intent.putExtra("gps", adapter.getItem(position).getGps());
+				startActivity(intent);
 			}
 		});
         

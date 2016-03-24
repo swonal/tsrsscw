@@ -7,6 +7,7 @@ public class RssFeedItem {
 	private String startDate;
 	private String endDate;
 	private String link;
+	private String gps;
 	
 	public String getTitle() {
 		return title;
@@ -37,6 +38,12 @@ public class RssFeedItem {
 	}
 	public void setLink(String link) {
 		this.link = link;
+	}
+	public String getGps() {
+		return gps;
+	}
+	public void setGps(String gps) {
+		this.gps = gps;
 	}
 	
 	

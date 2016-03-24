@@ -103,7 +103,9 @@ public class XMLPullParserHandler {
                         	rssItem.setStartDate(temp);
                         	currentIncident = false;
                         }                    	
-                    }
+                    } else if (tagname.equalsIgnoreCase("point")) {
+                        rssItem.setGps(temp);
+                	}
                 	}
                     break;
  
